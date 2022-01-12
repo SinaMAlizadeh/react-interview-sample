@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { InputChangeContext, InputContext } from "../../context/inputContext";
 import BaseInputComponent from "../input-component/baseInput";
 

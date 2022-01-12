@@ -10,7 +10,7 @@ const InputComponent = () => {
     debugger;
     setInputFn({
       ...inputFn,
-      [e.target.name]: e.target.value,
+      [e.target.value]: e.target.value,
     });
   };
 

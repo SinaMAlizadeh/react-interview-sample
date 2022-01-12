@@ -9,21 +9,26 @@ import About from "./components/RouterTest/about";
 import Student from "./components/RouterTest/student";
 import StudentAdd from "./components/RouterTest/studentAdd";
 import StudentList from "./components/RouterTest/studentList";
+import { Provider } from "react-redux";
+import store from "./Redux/store";
+
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<Home />} />
-          <Route path="students" element={<Student />}>
-            <Route index element={<StudentList />} />
-            <Route path=":id" element={<StudentAdd />} />
+  <Provider store={store}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route index element={<Home />} />
+            <Route path="students" element={<Student />}>
+              <Route index element={<StudentList />} />
+              <Route path=":id" element={<StudentAdd />} />
+            </Route>
+            <Route path="about" element={<About />} />
           </Route>
-          <Route path="about" element={<About />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>,
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
+  </Provider>,
   document.getElementById("root")
 );
 
